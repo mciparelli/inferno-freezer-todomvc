@@ -1,0 +1,35 @@
+{
+  "private": true,
+  "main": "src/boot.js",
+  "scripts": {
+    "prebuild": "mkdirp js",
+    "build": "browserify . > js/app.js",
+    "dev": "budo . --open --serve js/app.js -- --plugin browserify-hmr"
+  },
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "freezer-js": "^0.11.1",
+    "global": "^4.3.0",
+    "inferno-dom": "^0.7.23",
+    "inferno-hyperscript": "^2.0.2",
+    "node-uuid": "^1.4.7",
+    "ramda": "^0.21.0",
+    "todomvc-app-css": "^2.0.0",
+    "todomvc-common": "^1.0.0"
+  },
+  "devDependencies": {
+    "browserify": "^13.0.1",
+    "browserify-hmr": "^0.3.1",
+    "budo": "^8.3.0",
+    "eslint": "^3.1.1",
+    "eslint-config-airbnb-base": "^4.0.2",
+    "eslint-plugin-import": "^1.11.1",
+    "mkdirp": "^0.5.1",
+    "rollupify": "^0.3.4"
+  },
+  "browserify": {
+    "transform": [
+      "rollupify"
+    ]
+  }
+}
