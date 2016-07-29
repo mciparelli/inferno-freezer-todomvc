@@ -16,16 +16,13 @@ export default State =>
       }
     });
     state.ui.set('input', '');
-  })
-  .on('delete', ({ id }) => {
+  }).on('delete', ({ id }) => {
     const state = State.get();
     const newTodos = state.todos.filter(todo => todo.id !== id);
     state.set('todos', newTodos);
-  })
-  .on('toggleCompleted', (todos, completed) => {
+  }).on('toggleCompleted', (todos, completed) => {
     todos.forEach(todo => todo.set('completed', completed));
-  })
-  .on('clearCompleted', () => {
+  }).on('clearCompleted', () => {
     const state = State.get();
     const newTodos = state.todos.filter(todo => !todo.completed);
     state.set('todos', newTodos);

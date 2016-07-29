@@ -10,9 +10,11 @@ const shouldCheckAllCompleted = (todos, filter) => {
 
 const filterTodos = (todos, filter) => {
   if (filter === undefined) return todos;
-  return todos.filter(todo =>
-    filter === 'completed' && todo.completed || filter === 'active' && todo.completed === false
-  );
+  return todos.filter(todo => {
+    const passesCompleted = filter === 'completed' && todo.completed;
+    const passesActive = filter === 'active' && todo.completed === false;
+    return passesCompleted || passesActive;
+  });
 };
 
 export default ({ todos, filter, trigger }) => {

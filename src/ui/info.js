@@ -15,4 +15,4 @@ export default () =>
         href: 'http://todomvc.com'
       }, 'TodoMVC')
     ])
-  ])
+  ]);

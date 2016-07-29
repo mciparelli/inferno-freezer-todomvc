@@ -12,7 +12,7 @@ const renderClearCompleted = (todos, props) => {
   return h('button.clear-completed', props, 'Clear completed');
 };
 
-const renderCount = todos =>  {
+const renderCount = todos => {
   const activeCount = todos.filter(todo => todo.completed === false).length;
   return h('span.todo-count', [
     h('strong', activeCount),

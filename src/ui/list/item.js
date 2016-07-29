@@ -10,7 +10,7 @@ export default ({ todo, trigger, isEditing }) => {
     R.trim,
     R.ifElse(
       R.isEmpty,
-      val => trigger('delete', todo),
+      () => trigger('delete', todo),
       val => trigger('save', val, todo)
     )
   );
@@ -46,7 +46,7 @@ export default ({ todo, trigger, isEditing }) => {
         value: todo.ui ? todo.ui.editText : '',
         onBlur: ev => {
           if (!isEditing) return;
-          saveOrDestroy(ev.currentTarget.value)
+          saveOrDestroy(ev.currentTarget.value);
         },
         onKeyDown: ev => {
           const isEnter = ev.keyCode === ENTER_KEY;

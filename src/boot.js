@@ -12,7 +12,7 @@ const run = () => {
     module.hot.accept();
   }
   const state = State.get();
-  const todosToSave = state.todos.map(todo => Object.assign({}, todo, { ui: undefined }))
+  const todosToSave = state.todos.map(todo => Object.assign({}, todo, { ui: undefined }));
   localStorage.setItem('todos', JSON.stringify(todosToSave));
   render(App({
     state,

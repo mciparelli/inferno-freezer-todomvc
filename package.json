@@ -2,9 +2,10 @@
   "private": true,
   "main": "src/boot.js",
   "scripts": {
-    "prebuild": "mkdirp js",
+    "lint": "eslint src | notify -t eslint",
+    "prebuild": "mkdirp js; npm run lint",
     "build": "browserify . > js/app.js",
-    "dev": "budo . --open --serve js/app.js -- --plugin browserify-hmr"
+    "dev": "budo . --open --serve js/app.js --onupdate 'npm run lint' -- --plugin browserify-hmr"
   },
   "dependencies": {
     "classnames": "^2.2.5",
@@ -22,9 +23,10 @@
     "browserify-hmr": "^0.3.1",
     "budo": "^8.3.0",
     "eslint": "^3.1.1",
-    "eslint-config-airbnb-base": "^4.0.2",
+    "eslint-config-airbnb-base": "^5.0.0",
     "eslint-plugin-import": "^1.11.1",
     "mkdirp": "^0.5.1",
+    "node-notifier": "^4.6.0",
     "rollupify": "^0.3.4"
   },
   "browserify": {
