@@ -17,7 +17,7 @@ const run = () => {
   render(App({
     state,
     trigger: State.trigger
-  }), document.body);
+  }), document.querySelector('.container'));
 };
 
 State.on('update', run);
