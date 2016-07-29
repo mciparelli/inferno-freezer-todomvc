@@ -22,9 +22,7 @@ export default ({ todo, trigger, isEditing }) => {
       }),
       onDidUpdate: liNode => {
         if (!isEditing) return;
-        const inputNode = liNode.querySelector('.edit');
-        inputNode.focus();
-        inputNode.select();
+        liNode.querySelector('.edit').focus();
       }
     }, [
       h('div.view', [
