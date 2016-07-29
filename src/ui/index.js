@@ -8,8 +8,8 @@ export default ({ state, trigger }) =>
   h('div', [
     h('section.todoapp', [
       Header({ state, trigger }),
-      List({ todos: state.todos, trigger }),
-      Footer({ todos: state.todos, trigger })
+      List({ todos: state.todos, filter: state.ui.filter, trigger }),
+      Footer({ todos: state.todos, filter: state.ui.filter, trigger })
     ]),
     Info()
   ]);
