@@ -9,7 +9,6 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "freezer-js": "^0.11.1",
-    "global": "^4.3.0",
     "inferno-dom": "^0.7.23",
     "inferno-hyperscript": "^2.0.2",
     "node-uuid": "^1.4.7",
