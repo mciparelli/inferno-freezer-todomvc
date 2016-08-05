@@ -22,5 +22,5 @@ const run = () => {
 
 State.on('update', run);
 
-Router(State).init();
+Router(State).init('/');
 run();
